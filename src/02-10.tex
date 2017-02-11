@@ -1,0 +1,97 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section*{Math 505, 2/10}
+
+A couple of further remarks about the variety $V\subset K^2$ defined
+last time, with equation $x^2 - y^3 = 0$: its coordinate ring
+$K[x,y]/(x^2 - y^3)$ is almost, but not quite, a Dedekind domain. It is
+Noetherian of dimension 1, but is not integrally closed, as $(x/y)^2 =
+y$ in its quotient field, so that $x/y$ is integral over this ring but
+not in it. Later we will see that $V$ is bad for another reason: it has
+exactly one singular point, at $(0,0)$, which is such that its tangent
+space is two-dimensional, though $V$ itself has dimension one.
+
+Now let $V,W$ be affine varieties. We investigate the situation in which
+the coordinate ring $K[V]$ is a finitely generated integral extension of
+$K[W]$ in more detail; still more generally, let $A,B$ be any two
+commutative rings with $B$ a finitely generated integral extension of
+$A$. Let $M$ be a maximal ideal of $A$. Then {\sl there is at least one
+  but only finitely many maximal ideals $N$ of $B$ such that $N\cap A =
+  M$; we say that there are only finitely many ideals of $B$ {\sl lying
+    over} $M$ in this situation. To see this, let $S$ be the complement
+  of $M$ in $A$. Then the localization $B'=S^{-1}B$ is again a finitely
+  generated integral extension of $A'=S^{-1}A$; it is integral because
+  if $b\in B,s\in S$, and if $b^n = \sum_i a_i b^i$ with the $a_i$ in
+  $A$, then $(b/s)^n = \sum_i (a_i /s^{n-i}) (b/s)^i$. Given any maximal
+  ideal $N'$ of $B'$, its intersection $M'$ with $A'$ must be maximal,
+  since $B'/N'$ is integral over $A'/M'$; but $MA'$ is the only maximal
+  ideal of $A'$, so we must have $M' = MA'$. Now $N'$ corresponds to a
+  prime ideal of $B'$ not meeting $S$, whose intersection with $A$ is
+  $M$; since $B/N$ is integral over $A/M$, we deduce that $N$ is maximal
+  in $B$, as desired. If $B$ is generated over $A$ by $b_1,\ldots,b_n$,
+  satisfying monic polynomials $f_1,\ldots,f_n$ with coefficients in
+  $A$, then passing to the quotient $B/N$ of $B$ by any maximal ideal
+  lying over $M$, we see that $B/N$ embeds into the splitting field $S$
+  of $A/M$ of the product $f_1\cdots f_n$ of the $f_i$ (with
+  coefficients reduced mod $M$). As there can only be finitely many such
+  embeddings, there are only finitely many possibilities for $B/N$ and
+  accordingly only finitely many maximal ideals $N$ lying over $M$; of
+  course there are no inclusions among any two such ideals $N$, since
+  both are maximal. The same reasoning shows more generally that {\sl
+    any prime ideal $P$ of $A$ has at least one but only finitely many
+    prime ideals $Q$ of $B$ lying over it, and none of these is
+    contained in another} (since $PA_P$ is the only maximal ideal of
+  $A_P$). Since the coordinate ring $K[V]$ of any variety $V$ is a
+  finitely generated integral extension of $K[y_1,\ldots,y_m]$ for some
+  $m$, this proves our earlier claim that $V$ is a ramified finite cover
+  of $K^m$ in this situation. The ramification arises since the number
+  of maximal ideals $N$ of $K[V]$ lying over a fixed one $M$ in
+  $K[y_1,\ldots,y_m]$ can vary with $M$.
+
+On the other hand, if the commutative ring $B$ is the polynomial ring
+$A[x]$ in one variable over $A$, then given any prime ideal $P$ of $A$
+there are two prime ideals $Q_1,Q_2$ of $B$ lying over $P$ with $Q_1$
+properly contained in $Q_2$, but there are never three such ideals
+forming a strictly ascending chain. Indeed, moding out by $P$ and then
+localizing by all elements of $A$ not in $P$, we reduce to the case
+where $A=K$ is a field and $P=0$; then the result is obvious since
+$K[x]$ is a PID. Later we will see that {\sl given any irreducible
+  variety $V$ (whose coordinate ring $K[V]$ is thus an integral domain),
+  any two saturated chains of prime ideals in $K[V]$, that is any two
+  strictly ascending chains $P_1\subset\cdots\subset
+  P_m,Q_1\subset\cdots\subset Q_n$ of prime ideals in $K[V]$ with no
+  prime ideals properly between any two consecutive $P_i$ or $Q_j$, have
+  the same length $m=n$.} This length is called the {\sl dimension} of
+the variety $V$ and it is $n$ if $K[V]$ is a finitely generated integral
+extension of a polynomial ring $K[y_1,\ldots,y_n]$. If $V$ is not
+irreducible, then its dimension is defined to b e the maximum dimension
+of any of its irreducible components. For example, the dimension of the
+variety $V(xz,yz)$ of the ideal $(xz,yz)$ in $K[x,y,z]$ is 2, since this
+variety is the union of the plane $x=0$ and the line $y=z=0$; we see
+from this example that the irreducible components of a variety need not
+have the same dimension, even if these components overlap. If the
+components do have the same dimension then we call the variety {\sl
+  equidimensional}; we will see that this holds under fairly general
+circumstances. (For example, the components of the $(n-1)$-dimensional
+variety defined by the equation $p=0$ with $p\in K[x_1,\ldots,x_n]$ are
+defined by the equations $p_i = 0$, where the $p_i$ are the irreducible
+factors of $p$; each has dimension $n-1$; later we will see that the
+same thing happens when we intersect an irreducible variety $V$ with a
+hypersurface (defined by the vanishing of a single polynomial)).
+
+Still more generally, given any commutative ring $A$ we define its {\sl
+  (Krull) dimension} to be the largest $n$ such that there is a strictly
+ascending chain $P_0\subset P_1\subset\cdots\subset P_n$ of prime ideals
+in $A$, or $\infty$ if arbitrarily long such chains exist. Then it turns
+out the dimension even of a Noetherian ring can be infinite, but if we
+fix a prime ideal $P$ of the Noetherian ring $A$, then strictly
+ascending chains of prime ideals ending in $P$ are bounded in length
+(equivalently, the dimension of the localization $A_P$ is always finite;
+or there are no infinite strictly {\sl descending} chains of prime
+ideals in $A$).
+
+
+\end{document}
