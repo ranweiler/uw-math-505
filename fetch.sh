@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
 
-url='http://www.math.washington.edu/~mcgovern/505wi17'
+url='http://sites.math.washington.edu/~mcgovern/505wi17'
 files=$(curl "${url}/" 2>/dev/null | pcregrep -o1 '<a.*>(.*tex)</a>')
 
 mkdir -p raw
