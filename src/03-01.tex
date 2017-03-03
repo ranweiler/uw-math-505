@@ -5,88 +5,93 @@
 
 \section*{Math 505, 3/1}
 
-We now explore the behavior of dimension in more detail in the
-projective setting, but before we do this we digress to generalize to
-finitely generated modules $M$ over Noetherian rings $A$ our earlier
-recipe attaching finitely many prime ideals of $A$ to any ideal $I$ of
-it (the minimal primes over $I$). So let $M$ be such a module. The set
-of annihilator ideals $A_m = \{x\in A: xm = 0\}$ as $m$ runs through teh
-nonzero elements of $M$ must have a largest element, say $A_{m_1}$,
-which we claim must be a prime ideal. Indeed, if $xym_1=0$ for some
-$x,y\in A$ but $xm_1,ym_1\ne0$, then $A_{ym_1}$ is strictly larger than
-$A_{m_1}$, a contradiction. Then the submodule $Am_1$ of $M$ generated
-by $m_1$ takes the form $A/P_1$ for some prime ideal $P_1$. Moding out
-by $Am_1$ and repeating this procedure, we find that the quotient
-$M'=M/Am_1$ admits an element $m_2$ whose annihilator $P_2$ is another
-prime ideal. Moding $M'$ out by $Am_2$ and continuing, we get a chain
-$M_0=0\subset M_1\subset M_2,\subset\cdots$ of submodules of $M$ such
-that eauch quotient $M_i/M_{i-1}\cong A/P_i$ for some prime ideal $P_i$
-of $A$. But there are no strictly increasing chains of submodules of
-$M$, so the above chain of submodules terminates at some $M_n = M$. Now
-the ideals $P_1,\ldots,P_n$ arising from the chain are not uniquely
-determined, but if $P$ is one of them and we localize $M$ at $P$
-(letting $M_P$ consist of all formal fractions $m/s$ with $m\in M,s\in
-A,s\notin P$, decreeing that $m/s = n/t$ if there is $u\notin P $ with
-$u(tm - ns) = 0$ in $M$) then we find that all quotients $A/P_i$
-disappear under this operation if $P_i$ is not contained in $P$, while
-if $P_i = P$ then the localization is the fraction field of $A/P$, which
-is also the quotient of the localized ring $A_P$ at its maximal ideal
-$PA_P$. The upshot is that {\sl for any chain $M_0 =
-  0\subset\cdots\subset M_n= M$ of submodules of $M$ as above with
-  $M_i/M_{i-1}\cong A/P_i, P_i$ prime, then the ideals $P$ among
-  $P_1,\ldots,P_n$ not containing any others are uniquely determined,
-  each along with the number $\mu_P(M)$ of times it occurs as a $P_i$
-  (and in fact $\mu_P(M)$ is the length of $M_P$ over the local ring
-  $A_P$)}. We call the minimal ideals among the $P_i$ the {\sl
-  associated primes} of $M$. Now if $A$ and $M$ both happen to be
-graded, then we can carry out the above construction considering only
-{\sl homogeneous} elements of $M$ throughout and observing under this
-restriction all quotients of $M$ retain the grading. Thus we arrive at a
-finite collection of graded prime ideals $P_1,\ldots,P_n$ attached to
-$M$ whose minimal elements $P$ together with their multiplicities
-$\mu_P(M)$ are uniquely determined by $M$.
+Now we get to become little kids again and blow things up. More
+precisely, given a commutative Noetherian ring $A$ and an ideal $I$ of
+$A$, we have defined $B_I(A)$, the blowup algebra of $I$ in $A$, to be
+the graded direct sum $\oplus_{i\ge0} I^i$, where $I^0$ is taken to be
+$A$. The associated graded ring $G_I(A)$ identifies with
+$B_I(A)/IB_I(A)$. In a similar way, if $M$ is a finitely generated
+$A$-module equipped with an $I$-filtration $F=(M_i)$, then $B_F(M)$, the
+{\sl blowup module of $F$ in $M$} is defined to be the graded
+$B_I(A)$-module $\oplus_{i\ge0} M_i$. This module is finitely generated
+if and only if the filtration $F$ is stable. The main case of interest
+in algebraic geometry occurs when $A$ is the coordinate ring of an
+affine variety $V$ and $I$ is the ideal (not necessarily maximal)
+corresponding to a subvariety $W$. For example, take $V$ to be $K^n$ and
+$W$ the origin, so that $A=S=K[x_1,\ldots,x_n], M= (x_1,\ldots,x_n)$.
+Then the variety $\mathbf B$ corresponding to $B_M(S)$ may be described
+via affine coordinates $x_1,\ldots,x_n$ and projective coordinates
+$y_1,\ldots,y_n$ (so that the $y_i$ are not allowed to be simultaneously
+0 and we may replace $y_1,\ldots,y_n$ by $ky_1,\ldots,ky_n$ for any
+$k\in K^*$). The defining equations are then $x_i y_j = x_j y_i$ for all
+$i\ne j$. We then have a projection map $\phi:\mathbf B\rightarrow K^n$
+sending $(x_1,\ldots,x_n,y_1,\ldots y_n)$ to $(x_1,\ldots,x_n)$ whose
+fiber over any point $v\ne0$ in $K^n$ is a single point in $\mathbf
+P^{n-1}$, but whose fiber over 0 is all of $\mathbf P^{n-1}$. In effect,
+we have replaced the origin in $K^n$ by a copy of $\mathbf P^{n-1}$
+(this is why we call the operation \lq\lq blowing up"). More generally,
+let $V$ be a subvariety of $K^n$ having the origin 0 as a singular
+point. Then the closure of the inverse image $\phi^{-1}(V-0)$ in any of
+the affine open pieces covering $\mathbf B$ (where $V-0$ denotes $V$
+with 0 removed) is called the {\sl blowup} or {\sl strict transform} of
+$V$. Revisiting once again our favorite example, the variety $V$ defined
+by $x^2 = y^3$, we find that a dense subset of its blowup is defined by
+the two equations $x^2 = y^3, x = ty$, and the full blowup is given by
+the now familiar parametric equations $y = t^2,x = t^3,t=t$ for all
+$t\in K$. It is isomorphic to the affine line $K^1$; note that the
+singularity at the origin has disappeared. (The alternative of imposing
+the equation $y=ux$ rather than $x = ty$ leads to a more complicated
+realization of the same variety $K^1$.) For a more interesting example,
+consider the variety $W$ defined by the equation $y^2 = x^2(x+1)$, or
+equivalently by $y^2 - x^2 - x^3 = 0$. Imposing the equation $y = tx$,
+we get $t^2 x^2 - x^2 - x^3 = x^2(t^2 - 1 - x) = 0$, which factors,
+having the two solutions $x=0$ or $t^2=x +1$. What happens here is that
+the singular point $(0,0)$ in the original variety has a two-dimensional
+tangent space; more precisely, we regard the lines $y = x$ and $y = -x$
+as defining the two directions of that space, since $y^2 - x^2 =
+(y-x)(y+x)$ is the homogeneous term of least degree in the equation
+defining $W$. The singular point $(0,0)$ of $W$ in effect splits up into
+two points $(0,-1)$ and $(0,1)$, interpreting the coordinates of these
+points as values of $x$ and $t$ respectively. Both points are now
+nonsingular on the strict transform and each has only one of the tangent
+directions that were originally present at $(0,0)$. In another example
+in homework, you will blow up the variety defined by $y^3 = x^5$; in
+this case $(0,0)$ is still a singular point in the blowup, but one
+further blowup resolves the singularity.
 
-Now if $V\subset\mathbf P^n$ is a projective variety and $M=S/I$ is its
-homogeneous coordinate ring, then $M$ is in particular a graded
-$S$-module, whence by the machinery developed last week it has a Hilbert
-polynomial $p_M$ which is such that if $m\in\mathbf Z$ is sufficiently
-large, then $p_M(m)$ equals the dimension over $K$ of the $m$th graded
-piece $M_m$ of $M$. The degree $d$ of $p_M$ is then the dimension of $V$
-(since we have seen that the same ideal $I$, viewed as an ordinary
-radical ideal in $K[x_1,\ldots,x_{n+1}]$ has as its variety the affine
-cone $C(V)$, which has dimension $d+1$). We also saw last week that the
-leading coefficient of $p_M$ equals $r/d!$ with $r$ a positive integer;
-we call it the {\sl degree} of $V$; unlike the dimension of $V$, this
-number depends on the way $V$ is embedded in projective space and not
-just on $V$ itself. If $V$ is reducible with irreducible components
-$V_1,\ldots,V_r$, corresponding to the prime ideals $P_1,\ldots,P_r$
-containing $I$, then the discussion in the above paragraph shows that
-the degree of $V$ is given by $\sum_i \mu_{P_i}(S/I) d_i$, where $d_i$
-is the degree of the variety corresponding to $P_i$, since here the
-$P_i$ are exactly the minimal primes containing $I$. Now the Hilbert
-polynomial $p_S(m)$ of $S$ itself is easily computed to be the binomial
-coefficient $m+n\choose n$, so $\mathbf P^n$ itself has degree 1. A
-hypersurface $H$ in $\mathbf P^n$ defined by a single homogeneous
-polynomial of degree $d$ has Hilbert polynomial $p_S(m) - p_S(m-d)$
-whence it has degree $d$ as well. The union of two varieties $X_1,X_2$
-of the same dimension $d$ such that $X_1\cap X_2$ has dimension less
-than $d$ has degree the sum of the degrees of $X_1$ and $X_2$. Finally,
-suppose we take the intersection $Y\cap H$ of an irreducible variety
-$Y\subset\mathbf P^n$ of dimension $d$ and a hypersurface $H$ not
-containing it. We have seen that the irreducible components
-$Z_1,\ldots,Z_r$ of $Y\cap H$ all have dimension $d-1$; defining the
-{\sl intersection multiplicity} $i(Y,H;Z_j)$ to be the length
-$\mu_{P_j}(S/(I_Y + I_H)$, where $I_y.I_h$ are the ideals corresponding
-to $Y,H$ and each $P_j$ is the prime ideal corresponding to $Z_j$, then
- $$
- \sum_{j=1}^r i(Y,H;Z_j) = d_Y d_H
- $$
- \noindent where $d_Y,d_H$ are the respective degrees of $Y$ and $H$. In
- particular, {\sl two curves in $\mathbf P^2$, defined by homogeneous
-   polynomials of degrees $d,e$, possibly reducible but having no
-   irreducible component in common, intersect in exactly $de$ points if
-   these are counted with appropriate multiplicities}. Thus curves in
- $\mathbf P^2$, in stark contrast to curves in $K^2$, intersect in a
- very nice and uniform way.
+In general the preimage of the \lq\lq bad subset" $W$ of $V$ in the
+blowup of $V$ corresponds to the algebra $G_I(A)$, so that it is a
+projective variety with $G_I(A)$ as its homogeneous coordinate ring.
+Suppose that $A$ is the coordinate ring of an affine variety $V$
+containing 0, so that the corresponding ideal $J$ contains the
+augmentation ideal $M=(x_1,\ldots,x_n)$ generated by the variables. For
+each $f\in J$, define in$(f)$, the {\sl initial form} of $f$, by letting
+$m$ be the largest index with $f\in M^m$ and then taking in$(f)$ to be
+the image of $f$ in $M^m/N^{m+1}$; you should think of in$(f)$ as the
+sum of the homogeneous terms of $f$ of least degree. The ideal
+consisting of all in$(f)$ as $f$ runs through $J$ defines the so-called
+{\sl tangent cone} of $V$; its coordinate ring is $G_M(A)$.
+
+We conclude with some further remarks about minimal sets of generators
+for prime ideals. We have seen that, given a prime ideal $P$ of height
+$d$ in a Noetherian ring $A$, there are $x_1,\ldots,x_d\in P$ such that
+$P$ is one of the finitely many minimal primes $P_1,\ldots,P_n$ over $J
+= (x_1,\ldots,x_d)$. By choosing $x_{d+1}$ to lie in $P$ but none of the
+other minimal primes $P_i$ we get a new ideal $J'= (x_1,\ldots,x_{d+1}$
+such that the only minimal prime over $J'$ is $P$, whence the radical of
+$J'$ must be $P$. Thus {\sl any prime ideal of height $d$ can be
+  generated up to taking radicals by $d+1$ elements}, It is an open
+question, even for ideals in polynomial rings, whether a prime ideal of
+height $d$ is the radical of an ideal generated by $d$ elements. Perhaps
+the most famous example is the ideal of the {\sl rational quartic curve}
+in $\mathbf P^3$, which may be described as the kernel of the map
+$K(t_0,t_1,t_2,t_3]\rightarrow K{s,t}$ sending $t_0$ to $s^4, t_1$ to
+$s^3 t, t_2$ to $st^3$, and $t_3$ to $t^4$. Remarkably enough, it is
+known in all positive characteristics that this ideal is the radical of
+an ideal generated by two elements (which two depends on the
+characteristic), but this is not known in characteristic zero! (In
+geometric terms, the problem is not that the quartic curve is
+intrinsically complicated; it is after all isomorphic to $\mathbf P^1$, but
+it sits in $\mathbf P^3$ in a complicated way.)
 
 \end{document}
